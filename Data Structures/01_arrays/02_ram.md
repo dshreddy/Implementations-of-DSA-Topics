@@ -14,5 +14,5 @@ RAM can be thought of as a continuous block of memory where each piece of data h
 1.  **Value:** The actual data being stored (e.g., an integer or a character).
 2.  **Address:** A distinct location in memory, often represented with a hexadecimal value (e.g., `$0`, `$4`, `$8`).
 
-![](../assets/ram.png)
+![](../../assets/ram.png)
 
