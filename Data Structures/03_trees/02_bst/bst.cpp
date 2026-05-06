@@ -10,11 +10,15 @@ public:
     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 };
 
+/**
+ * A binary search tree (BST) is a binary tree data structure in which the
+ * value of each node is greater than the values of all nodes in its left subtree and less than the values of all nodes in its right subtree.
+ */
 class BST {
 private:
     TreeNode *root = nullptr;
 
-    // O(log n)
+    // O(log n) [If tree is balanced]
     TreeNode * _insert(TreeNode *curr, int n) {
         if(!curr) return new TreeNode(n);
 
@@ -24,7 +28,7 @@ private:
         return curr;
     }
 
-    // O(log n)
+    // O(log n) [If tree is balanced]
     TreeNode * _search(TreeNode *curr, int n) {
         if(!curr) return nullptr;
 
@@ -39,7 +43,7 @@ private:
     }
 
     /**
-     * O(log n)
+     * O(log n) [If tree is balanced]
      * Find minimum in right sub tree
      * This will have the following properties
      *  - Every value on left sub tree is less than this (since this is in right sub tree)
