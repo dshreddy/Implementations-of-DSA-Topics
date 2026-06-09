@@ -10,8 +10,9 @@ bool sliding_window_variable(vector<int>& v) {
     int q = 0, n = v.size(), maxSubArray = 0;
 
     for(int p = 0; p < n; p++) {
-        while(q < n && arr[q] == arr[q+1]) q++;
+        while(q < n && v[q] == v[q+1]) q++;
         maxSubArray = max(maxSubArray, q-p+1);
+        p = q;
     }
 
     return maxSubArray;

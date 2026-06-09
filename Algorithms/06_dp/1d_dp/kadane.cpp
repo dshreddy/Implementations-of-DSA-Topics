@@ -21,7 +21,7 @@ int top_down(vector<int>& v) {
     dp[0] = v[0];
     for(int i = 1; i < n; i++) dp[i] = max(v[i]+dp[i-1], v[i]);
     int max_sum = dp[0];
-    for(int i = 1; i < n; i++) max_sum = max_sum > dp[i] ? max_sum : dp[i];
+    for(int i = 1; i < n; i++) max_sum = max(max_sum, dp[i]);
     return max_sum;
 }
 

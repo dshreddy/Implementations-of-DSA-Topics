@@ -3,12 +3,11 @@ using namespace std;
 
 void dfs_visit(unordered_map<int, vector<int>> &adj, unordered_map<int, bool> &visited, int node) {
 
-    if(visited[node]) return;
-    cout << node << "\t";
     visited[node] = true;
-
     for(int nb : adj[node]) {
-        dfs_visit(adj, visited, nb);
+        if(!visited[nb]) {
+            dfs_visit(adj, visited, nb);
+        }
     }
 }
 

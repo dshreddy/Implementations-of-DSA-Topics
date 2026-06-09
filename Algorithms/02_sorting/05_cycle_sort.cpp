@@ -4,7 +4,7 @@ using namespace std;
 void cycleSort(vector<int> &nums) {
     int n = nums.size(), final_index;
     for(int i = 0; i < n; i++) {
-        if(nums[i]-1 == i) continue;
+        if(nums[i] == i+1) continue;
         else {
             final_index = nums[i]-1;
             // left side is always sorted (invariant) [arr[0], arr[1], arr[2], ... , arr[i-1]] 

@@ -9,13 +9,17 @@ public:
 
     int maxRob(vector<int>& nums, int index) {
         if(index >= nums.size()) return 0;
-        if(index == nums.size()-1) return nums[index];
-        if(cache.find(index) != cache.end()) return cache[index];
-        // Rob current house
-        int rob = nums[index] + maxRob(nums, index+2);
-        // Do not rob current house
-        int no_rob = maxRob(nums, index+1);
-        return cache[index] = max(rob, no_rob);
+
+        if(cache.find(index) == cache.end()) {
+            // Rob current house
+            int rob = nums[index] + maxRob(nums, index+2);
+            // Do not rob current house
+            int no_rob = maxRob(nums, index+1);
+
+            cache[index] = max(rob, no_rob)
+        }
+
+        return cache[index];
     }
 
     int rob(vector<int>& nums) {

@@ -6,15 +6,18 @@ private:
     vector<int> _stack;
     
 public:
+    // O(1)
     void push(int n) {
         _stack.push_back(n);
     }  
 
+    // O(1)
     void pop() {
         if (!_stack.empty()) _stack.pop_back();
         else throw std::out_of_range("Stack is empty");
     }
 
+    // O(1)
     int top() {
         if (!_stack.empty()) return _stack.back();
         else throw std::out_of_range("Stack is empty");

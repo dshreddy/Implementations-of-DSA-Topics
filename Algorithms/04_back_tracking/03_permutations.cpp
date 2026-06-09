@@ -84,9 +84,9 @@ vector<vector<int>> getAllPermutationsBruteForce(vector<int> &nums, int i) {
     int p = previousPermutations.size();
 
     vector<vector<int>> nextPermutations = {};
-    for(int j = 0; j < p; j++) {
+    for(vector<int> &previousPermutation : previousPermutations) {
         for(int k = 0; k < p+1; k++) {
-            vector<int> nextPermutation = previousPermutations[j];
+            vector<int> nextPermutation = previousPermutation;
             nextPermutation.push_back(nums[i]);
             swap(nextPermutation[k], nextPermutation[p]);
             nextPermutations.push_back(nextPermutation);

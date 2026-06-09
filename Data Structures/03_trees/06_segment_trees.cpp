@@ -28,6 +28,7 @@ private:
         return newN;
     }
 
+    // O(log n)
     void _update(SegmentTreeNode *rt, int index, int value) {
         int lower = rt->lower_bound, upper = rt->upper_bound;
         int middle = (lower+upper)/2;
@@ -43,6 +44,7 @@ private:
         rt->sum = rt->left->sum + rt->right->sum;
     }
 
+    // O(log n)
     int _query(SegmentTreeNode *rt, int l, int r) {
         int lower = rt->lower_bound, upper = rt->upper_bound;
         int middle = (lower+upper)/2;

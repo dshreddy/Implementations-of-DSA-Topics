@@ -1,8 +1,7 @@
 #include <iostream>
 using namespace std;
 
-struct TreeNode
-{
+struct TreeNode {
 public:
     int val;
     TreeNode *left, *right;

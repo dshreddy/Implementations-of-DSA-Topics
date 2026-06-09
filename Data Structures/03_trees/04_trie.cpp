@@ -16,6 +16,7 @@ public:
         
     }
     
+    // O(l) time complexity, where l is the length of the word
     void insert(string word) {
         TrieNode *temp = root;
         for(char ch: word) {
@@ -27,6 +28,7 @@ public:
         temp->isWord = true;
     }
     
+    // O(l) time complexity, where l is the length of the word
     bool search(string word) {
         TrieNode *temp = root;
         for(char ch: word) {
@@ -38,6 +40,7 @@ public:
         return temp->isWord;
     }
     
+    // O(l) time complexity, where l is the length of the prefix
     bool startsWith(string prefix) {
         TrieNode *temp = root;
         for(char ch: prefix) {

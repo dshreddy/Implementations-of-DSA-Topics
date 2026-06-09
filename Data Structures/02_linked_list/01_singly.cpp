@@ -24,6 +24,7 @@ public:
         return size;
     }
 
+    // O(n)
     // Assuming 0 based indexing
     void insert(int index, int val)
     {
@@ -66,6 +67,7 @@ public:
             tail = newNode; // curr null implies we're inserting at end, so update tail
     }
 
+    // O(n)
     // Assuming 0 based indexing
     void remove(int index)
     {
