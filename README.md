@@ -49,9 +49,9 @@
 
 ### Backtracking
 
-| Problem                | Implementation                                                      | Complexity                 |Practice Problem(s)|
-| ---------------------- | ------------------------------------------------------------------- | -------------------------- |------------------ |
-| Backtracking in Matrix | [Code](./Algorithms/04_back_tracking/00_backtracking_in_matrix.cpp) | TC: O(4^(m×n)), SC: O(m×n) | []()
+| Problem                | Implementation                                                      | Complexity                 | Practice Problem(s)|
+| ---------------------- | ------------------------------------------------------------------- | -------------------------- | ------------------ |
+| Backtracking in Matrix | [Code](./Algorithms/04_back_tracking/00_backtracking_in_matrix.cpp) | TC: O(4^(m×n)), SC: O(m×n) | [62. Unique Paths](https://leetcode.com/problems/unique-paths/description/)
 | Backtracking in Tree   | [Code](./Algorithms/04_back_tracking/01_backtracking_in_tree.cpp)   | TC: O(n), SC: O(n)         | [112. Path Sum](https://leetcode.com/problems/path-sum/description/)
 | Subsets                | [Code](./Algorithms/04_back_tracking/02_subsets.cpp)                | TC: O(2^n)                 | [90. Subsets II](https://leetcode.com/problems/subsets-ii/)
 | Combinations           | [Code](./Algorithms/04_back_tracking/03_combinations.cpp)           | TC: O(k × C(n,k))          | [17. Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)
@@ -59,30 +59,30 @@
 
 ### Graph Algorithms
 
-| Algorithm        | Implementation                                         | Complexity               |
-| ---------------- | ------------------------------------------------------ | ------------------------ |
-| Dijkstra         | [Code](./Algorithms/05_graphs/03_dijkstra.cpp)         | TC: O(E log E), SC: O(E) |
-| Prim's           | [Code](./Algorithms/05_graphs/04_prims.cpp)            | TC: O(E log E), SC: O(E) |
-| Kruskal          | [Code](./Algorithms/05_graphs/05_kruskal.cpp)          | TC: O(E log E), SC: O(E) |
-| Topological Sort | [Code](./Algorithms/05_graphs/06_topological_sort.cpp) | TC: O(V + E), SC: O(V)   |
-| BFS       | [Code](./Data%20Structures/05_graphs/adj_list.cpp) | TC: O(V + E), SC: O(V) |
-| DFS       | [Code](./Data%20Structures/05_graphs/adj_list.cpp) | TC: O(V + E), SC: O(V) |
+| Algorithm        | Implementation                                         | Complexity               | Practice Problem(s)|
+| ---------------- | ------------------------------------------------------ | ------------------------ | ------------------ |
+| BFS       | [Code](./Data%20Structures/05_graphs/adj_list.cpp) | TC: O(V + E), SC: O(V) | [994. Rotting Oranges](https://leetcode.com/problems/rotting-oranges/) |
+| DFS       | [Code](./Data%20Structures/05_graphs/adj_list.cpp) | TC: O(V + E), SC: O(V) | [200. Number of Islands](https://leetcode.com/problems/number-of-islands/) |
+| Dijkstra         | [Code](./Algorithms/05_graphs/03_dijkstra.cpp)         | TC: O(E log E), SC: O(E) | [778. Swim in Rising Water](https://leetcode.com/problems/swim-in-rising-water/description/) |
+| Prim's           | [Code](./Algorithms/05_graphs/04_prims.cpp)            | TC: O(E log E), SC: O(E) | [1584. Min Cost to Connect All Points](https://leetcode.com/problems/min-cost-to-connect-all-points/) |
+| Kruskal          | [Code](./Algorithms/05_graphs/05_kruskal.cpp)          | TC: O(E log E), SC: O(E) | [1489. Find Critical and Pseudo-Critical Edges in Minimum Spanning Tree](https://leetcode.com/problems/find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree/description/) |
+| Topological Sort | [Code](./Algorithms/05_graphs/06_topological_sort.cpp) | TC: O(V + E), SC: O(V)   | [210. Course Schedule II](https://leetcode.com/problems/course-schedule-ii/) |
 
 ### Dynamic Programming
 
 #### 1D DP
 
-| Problem            | Implementation                                    | Time Complexity |
-| ------------------ | ------------------------------------------------- | --------------- |
-| Fibonacci          | [Code](./Algorithms/06_dp/1d_dp/fibonacci.cpp)    | O(n)            |
-| House Robber       | [Code](./Algorithms/06_dp/1d_dp/house_robber.cpp) | O(n)            |
-| Kadane's Algorithm | [Code](./Algorithms/06_dp/1d_dp/kadane.cpp)       | O(n)            |
+| Problem            | Implementation                                    | Time Complexity | Practice Problem(s)|
+| ------------------ | ------------------------------------------------- | --------------- | ------------------ |
+| Fibonacci          | [Code](./Algorithms/06_dp/1d_dp/fibonacci.cpp)    | O(n)            | [509. Fibonacci Number](https://leetcode.com/problems/fibonacci-number/description/)
+| House Robber       | [Code](./Algorithms/06_dp/1d_dp/house_robber.cpp) | O(n)            | [198. House Robber](https://leetcode.com/problems/house-robber/)
+| Kadane's Algorithm | [Code](./Algorithms/06_dp/1d_dp/kadane.cpp)       | O(n)            | [918. Maximum Sum Circular Subarray](https://leetcode.com/problems/maximum-sum-circular-subarray/description/)
 
 #### 2D DP
 
-| Problem                       | Implementation                                          | Time Complexity |
-| ----------------------------- | ------------------------------------------------------- | --------------- |
-| 0/1 Knapsack                  | [Code](./Algorithms/06_dp/2d_dp/knapsack_01.cpp)        | O(N × C)        |
-| Unbounded Knapsack            | [Code](./Algorithms/06_dp/2d_dp/knapsack_unbounded.cpp) | O(N × C)        |
-| LCS                           | [Code](./Algorithms/06_dp/2d_dp/lcs.cpp)                | O(l1 × l2)      |
-| Longest Palindromic Substring | [Code](./Algorithms/06_dp/2d_dp/palindrome.cpp)         | O(n²)           |
+| Problem                       | Implementation                                          | Time Complexity | Practice Problem(s)|
+| ----------------------------- | ------------------------------------------------------- | --------------- | ------------------ |
+| 0/1 Knapsack                  | [Code](./Algorithms/06_dp/2d_dp/knapsack_01.cpp)        | O(N × C)        | [1049. Last Stone Weight II](https://leetcode.com/problems/last-stone-weight-ii/description/)
+| Unbounded Knapsack            | [Code](./Algorithms/06_dp/2d_dp/knapsack_unbounded.cpp) | O(N × C)        | [518. Coin Change II](https://leetcode.com/problems/coin-change-ii/description/)
+| LCS                           | [Code](./Algorithms/06_dp/2d_dp/lcs.cpp)                | O(l1 × l2)      | [1143. Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/)
+| Longest Palindromic Substring | [Code](./Algorithms/06_dp/2d_dp/palindrome.cpp)         | O(n²)           | [5. Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
