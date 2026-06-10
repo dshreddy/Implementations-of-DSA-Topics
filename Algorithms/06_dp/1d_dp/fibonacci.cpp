@@ -25,7 +25,7 @@ int recursion_with_memoization(int n, unordered_map<int,int> &cache) {
 /**
  * TC : O(n)
  * SC : O(n)
- * Also known as bottom-up approach
+ * Also known as bottom-up approach [0 is the bottom and n is the top]
  */
 int dp (int n) {
     vector<int> dp(n+1, 0);

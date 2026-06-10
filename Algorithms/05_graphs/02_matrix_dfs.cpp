@@ -5,17 +5,17 @@ using namespace std;
 
 class Solution {
 public:
-    void dfs(vector<vector<char>>& grid, vector<vector<bool>> &visited, int i, int j) {
+    void dfs_visit(vector<vector<char>>& grid, vector<vector<bool>> &visited, int i, int j) {
         if(min(i, j) < 0 || i >= grid.size() || j >= grid[0].size() || grid[i][j] == '0' || visited[i][j]) {
             return;
         }
 
         visited[i][j] = 1;
 
-        dfs(grid, visited, i+1, j);
-        dfs(grid, visited, i, j+1);
-        dfs(grid, visited, i, j-1);
-        dfs(grid, visited, i-1, j);
+        dfs_visit(grid, visited, i+1, j);
+        dfs_visit(grid, visited, i, j+1);
+        dfs_visit(grid, visited, i, j-1);
+        dfs_visit(grid, visited, i-1, j);
     }
 
     int numIslands(vector<vector<char>>& grid) {
@@ -25,7 +25,7 @@ public:
         for(int i = 0; i < m; i++) {
             for(int j = 0; j < n; j++) {
                 if(grid[i][j] == '1' && !visited[i][j]) {
-                    dfs(grid, visited, i, j);
+                    dfs_visit(grid, visited, i, j);
                     Islands++;
                 }
             } 
@@ -36,10 +36,6 @@ public:
 };
 
 int main() {
-    /*
-        Given a 2D matrix of 0s and 1s, count the unique paths from the top-left corner to the bottom-right corner.
-        A single path may only move along cells containing 1s, and you can only move up, down, right, left.
-    */
     vector<vector<char>> matrix = {
         {'1', '0', '1', '1'},
         {'1', '1', '1', '0'},

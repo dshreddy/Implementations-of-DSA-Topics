@@ -5,60 +5,57 @@ class Knapsack {
 private:
 
     /**
-     * TC : O(2^C) [Let's say there is an item "it" with weight 1, then the height of tree will be C (we can choose "it" C times)]
-     * SC : O(C) [depth of the recursion tree]
+     * TC : O(2^(N+C)) [Let's say there is an item "it" with weight 1, then the height of tree will be C (we can choose "it" C times)]
+     * SC : O(N+C) [depth of the recursion tree]
      * Where C is the capacity of the knapsack
      */
-    int bruteForceDFS(int i, int currentProfit, int currentCapacity) {
-        if(i >= N) return currentProfit;
-
-        int maxProfit = 0;
+    int bruteForceDFS(int i, int currentCapacity) {
+        if(i >= N) return 0;
 
         // Skip current item
-        maxProfit = max(maxProfit, bruteForceDFS(i+1, currentProfit, currentCapacity));
+        int skip = bruteForceDFS(i+1, currentCapacity);
         
         // Include current item
-        if(currentCapacity - weights[i] >= 0) {
-            currentProfit += values[i];
-            currentCapacity -= weights[i];
-            maxProfit = max(maxProfit, bruteForceDFS(i, currentProfit, currentCapacity));
+        int include = 0;
+        if(currentCapacity - weights[i] >= 0) {;
+            include = values[i] + bruteForceDFS(i, currentCapacity-weights[i]);
         }
 
-        return maxProfit;
+        return max(skip, include);
     }
 
     int getMaxProfitViaBruteForce() {
-        return bruteForceDFS(0, 0, C);
+        return bruteForceDFS(0, C);
     }
 
     // O(N * C) time and space complexity
-    int dfsWithMemoization(int i, int currentProfit, int currentCapacity, vector<vector<int>> &cache) {
-        if(i >= N) return currentProfit;
-        if(cache[i][currentCapacity] != -1) return cache[i][currentCapacity];
+    int topDownDP(int i, int currentCapacity, vector<vector<int>> &cache) {
+        if(i >= N) return 0;
 
-        int maxProfit = 0;
+        if(cache[i][currentCapacity] == -1) {
 
-        // Skip current item
-        maxProfit = max(maxProfit, bruteForceDFS(i+1, currentProfit, currentCapacity));
-        
-        // Include current item
-        if(currentCapacity - weights[i] >= 0) {
-            currentProfit += values[i];
-            currentCapacity -= weights[i];
-            maxProfit = max(maxProfit, bruteForceDFS(i, currentProfit, currentCapacity));
+            // Skip current item
+            int skip = topDownDP(i+1, currentCapacity, cache);
+            
+            // Include current item
+            int include = 0;
+            if(currentCapacity - weights[i] >= 0) {
+                include = values[i] + topDownDP(i, currentCapacity - weights[i], cache);
+            }
+
+            cache[i][currentCapacity] = max(skip, include);
         }
 
-        cache[i][currentCapacity] = maxProfit;
-        return maxProfit;
+        return cache[i][currentCapacity];
     }
 
-    int getMaxProfitViaMemoization() {
+    int getMaxProfitViaTopDownDP() {
         vector<vector<int>> cache(N, vector<int>(C + 1, -1));
-        return dfsWithMemoization(0, 0, C, cache);
+        return topDownDP(0, C, cache);
     }
 
     // O(N*C) Time & Space compleixty 
-    int topDownDP() {
+    int bottomUpDP() {
         vector<vector<int>> dp(N + 1, vector<int>(C + 1, 0));
         int skip, include;
 
@@ -78,7 +75,7 @@ private:
     }
 
     int getMaxProfitViaBottomUpDP() {
-        return topDownDP();
+        return bottomUpDP();
     }
 
 public:
@@ -94,7 +91,7 @@ public:
     }
 
     int getMaxProfit() {
-        return getMaxProfitViaMemoization();
+        return getMaxProfitViaBottomUpDP();
     }
 };
 

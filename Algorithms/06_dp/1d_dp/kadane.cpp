@@ -15,7 +15,7 @@ using namespace std;
  *     - Start a new subarray with the current element as the only element in the subarray
  * - So, at each index, I will take the maximum of these 2 decisions
  */
-int top_down(vector<int>& v) {
+int bottom_up(vector<int>& v) {
     int n = v.size();
     vector<int> dp(n, 0);
     dp[0] = v[0];
@@ -30,4 +30,6 @@ int main() {
     Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
     */
     vector<int> v = {-2,1,-3,4,-1,2,1,-5,4};
+    cout << bottom_up(v) << endl;
+    return 0;
 }

@@ -5,7 +5,7 @@ void topologicalSort(unordered_map<int, vector<int>> &graph) {
 
     unordered_map<int, int> inDegree;
     for (auto &node : graph) {
-        if(inDegree.find(node.first) == inDegree.end()) inDegree[node.first] = 0;
+        if(!inDegree.count(node.first)) inDegree[node.first] = 0;
         for (auto &neighbor : node.second) inDegree[neighbor]++;
     }
 
@@ -14,19 +14,18 @@ void topologicalSort(unordered_map<int, vector<int>> &graph) {
 
     cout << "Topological Sort: ";
     while (!q.empty()) {
+
         int current = q.front();
         q.pop();
+
         cout << current << "\t";
+
         for (auto &neighbor : graph[current]) {
             inDegree[neighbor]--;
-            if (inDegree[neighbor] == 0) {
-                q.push(neighbor);
-            }
+            if (inDegree[neighbor] == 0) q.push(neighbor);
         }
     }
     cout<<endl;
-
-    if(!q.empty()) cout << "Graph has a cycle, topological sort not possible." << endl;
 }
 
 int main(){

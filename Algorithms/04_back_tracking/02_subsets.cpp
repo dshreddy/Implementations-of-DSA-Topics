@@ -24,7 +24,7 @@ int main() {
     vector<vector<int>> allSubsets;
     vector<int> subset;
 
-    // subsets expecyt a sorted array to handle duplicates properly 
+    // getAllSubsets expects a sorted array to handle duplicates properly 
     sort(arr.begin(), arr.end());
     getAllSubsets(arr, 0, allSubsets, subset);
 

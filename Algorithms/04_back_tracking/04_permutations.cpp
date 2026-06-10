@@ -52,7 +52,7 @@ bool nextPermutation(vector<int> &nums) {
         return false;
     }
 
-    // Find the first element which is greater than the pivot element from right
+    // Find the first element from right which is greater than the pivot element 
     int index = -1;
     for(int i = n-1; i > pivot; i--) {
         if(nums[i] > nums[pivot]) {

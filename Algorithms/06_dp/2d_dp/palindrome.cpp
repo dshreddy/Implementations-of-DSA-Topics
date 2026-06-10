@@ -10,7 +10,7 @@ int longestPalindromicSubstring(string s) {
 
     int n = s.size();
 
-    int l, r, even, odd, lps = 0;
+    int l, r, lps = 0;
     for(int i = 0; i < n; i++) {
 
         l = i;

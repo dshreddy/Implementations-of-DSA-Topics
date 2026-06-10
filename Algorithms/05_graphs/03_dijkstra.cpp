@@ -13,10 +13,11 @@ int main() {
 
     /**
      * Dijkstra's algorithm 
-     * Time complexity: O(E log V) where E is the number of edges and V is the number of vertices [O(E log E ) ~ O(E log V^2 ) ~ O(E log V)]
+     * Time complexity: O((E+V) log V) where E is the number of edges and V is the number of vertices 
      * Space complexity: O(V) for the distance map and for the priority queue
      */
     priority_queue<pair<int, char>, vector<pair<int, char>>, greater<pair<int, char>>> minHeap;
+    
     unordered_map<char, int> distanceMap;
     minHeap.push({0, 'A'});
 

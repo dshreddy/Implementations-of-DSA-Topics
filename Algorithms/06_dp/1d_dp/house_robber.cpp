@@ -7,6 +7,7 @@ class Solution {
 public:
     unordered_map<int, int> cache;
 
+    // top-down approach with memoization
     int maxRob(vector<int>& nums, int index) {
         if(index >= nums.size()) return 0;
 

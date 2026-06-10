@@ -2,13 +2,10 @@
 using namespace std;
 
 void dfs_visit(unordered_map<int, vector<int>> &adj, unordered_map<int, bool> &visited, int node) {
-
+    if(visited[node]) return;
     visited[node] = true;
-    for(int nb : adj[node]) {
-        if(!visited[nb]) {
-            dfs_visit(adj, visited, nb);
-        }
-    }
+
+    for(int nb : adj[node]) dfs_visit(adj, visited, nb);
 }
 
 void dfs(unordered_map<int, vector<int>> &adj) {

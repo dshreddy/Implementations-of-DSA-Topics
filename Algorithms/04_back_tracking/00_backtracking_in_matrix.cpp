@@ -13,18 +13,18 @@ using namespace std;
  *       /   /     \     \          /     /    \     \
  *   (2,0) (1,1) (1,-1) (0,0)     (1,1) (0,2) (0,0) (-1,1)
  */
-int dfs(vector<vector<int>> &matrix, set<pair<int,int>> &path, int m, int n, int i, int j) {
+int dfs_visit(vector<vector<int>> &matrix, set<pair<int,int>> &path, int m, int n, int i, int j) {
 
-    if(min(i, j) < 0 || i >= m || j >= n || matrix[i][j] == 0 || path.count({i, j})) return 0;
+    if(min(i, j) < 0 || i >= m || j >= n || matrix[i][j] == 0 || path.find({i, j}) == path.end()) return 0;
     if(i == (m-1) && j == (n-1)) return 1;
 
     path.insert({i, j});
     int paths = 0;
 
-    paths += dfs(matrix, path, m, n, i+1, j);
-    paths += dfs(matrix, path, m, n, i, j+1);
-    paths += dfs(matrix, path, m, n, i, j-1);
-    paths += dfs(matrix, path, m, n, i-1, j);
+    paths += dfs_visit(matrix, path, m, n, i+1, j);
+    paths += dfs_visit(matrix, path, m, n, i, j+1);
+    paths += dfs_visit(matrix, path, m, n, i, j-1);
+    paths += dfs_visit(matrix, path, m, n, i-1, j);
 
     path.erase({i, j});
     return paths;
@@ -44,6 +44,6 @@ int main() {
     int m = matrix.size(), n = matrix[0].size();
     set<pair<int,int>> path;
 
-    int result = dfs(matrix, path, m, n, 0, 0);
+    int result = dfs_visit(matrix, path, m, n, 0, 0);
     cout << "Number of unique paths: " << result << endl;
 }

@@ -21,7 +21,7 @@ int bfs(vector<vector<int>> &matrix) {
     if(matrix[0][0] == 1) {
         q.push({0,0});
         visited[0][0] = 1;
-        distance[0][0] = 0;
+        distance[0][0] = 1;
     }
 
     while(!q.empty()) {
@@ -52,7 +52,7 @@ int bfs(vector<vector<int>> &matrix) {
         }
     }
 
-    return distance[m-1][n-1]+1;
+    return distance[m-1][n-1];
 }
 
 int main() {

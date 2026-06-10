@@ -120,6 +120,14 @@
     1. DFS
         - [Code](./Algorithms/03_trees/dfs.cpp)
 1. BackTracking
+    1. Backtracking In Matrix 
+        - [Code](./Algorithms/04_back_tracking/00_backtracking_in_matrix.cpp)
+        - TC : O(4 ^ (m*n)) where m = rows in matrix, n = columns in the matrix
+        - SC : O(m*n)
+    1. Backtracking In Tree
+        - [Code](./Algorithms/04_back_tracking/01_backtracking_in_tree.cpp)
+        - TC : O(n) where n = number of nodes in the tree
+        - SC : O(n)
     1. Subsets
         - [Code](./Algorithms/04_back_tracking/01_subsets.cpp)
         - TC : O(2^n)
@@ -132,19 +140,20 @@
 1. Graphs 
     1. Dijkstra
         - [Code](./Algorithms/05_graphs/03_dijkstra.cpp)
-        - TC : O( (E+V) log V)
-        - SC : O(V)
+        - TC : O( E log E) [In worst SC case, we need to push & pop E times from the heap, this can also be written as O(E log V) since E = V^2 in this case]
+        - SC : O(E) [When every node is connected to every other node]
     1. Prims
         - [Code](./Algorithms/05_graphs/04_prims.cpp)
-        - TC : O( (E+V) log V)
-        - SC : O(V+E)
+        - TC : O( E log E)
+        - SC : O(E) [When every node is connected to every other node]
     1. Kruskal
         - [Code](./Algorithms/05_graphs/05_kruskal.cpp)
         - TC : O(E log E)
-        - SC : O(V+E)
+        - SC : O(E)
     1. Topological Sort
         - [Code](./Algorithms/05_graphs/06_topological_sort.cpp)
         - TC : O(V+E)
+        - SC : O(V) [when all nodes have 0 indegree in the given graph]
 1. DP
     1. 1D DP
         1. Fibonaci
@@ -155,7 +164,7 @@
             - TC : O(n)
         1. Kadane
             - [Code](./Algorithms/06_dp/1d_dp/kadane.cpp)
-            - O(n)
+            - TC: O(n)
     1. 2D DP
         1. 0-1 KnapSack
             - [Code](./Algorithms/06_dp/2d_dp/knapsack_01.cpp)
