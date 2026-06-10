@@ -36,26 +36,26 @@
 | ------------------------- | ------------------------------------------------------------------- | --------------- |-------------------- |
 | Two Sum                   | [Code](./Algorithms/08_2_ptr_technique/2_ptr.cpp)                   | O(n)            |[167. Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/)|
 | Binary Search             | [Code](./Algorithms/08_2_ptr_technique/binary_search.cpp)           | O(log n)        |[704. Binary Search](https://leetcode.com/problems/binary-search/description/)|
-| Floyd's Cycle Detection   | [Code](./Algorithms/08_2_ptr_technique/flyods_cycle_detection.cpp)  | O(n)            |[]()|
-| Sliding Window (Fixed)    | [Code](./Algorithms/08_2_ptr_technique/sliding_window_fixed.cpp)    | O(n)            |
-| Sliding Window (Variable) | [Code](./Algorithms/08_2_ptr_technique/sliding_window_variable.cpp) | O(n)            |
+| Floyd's Cycle Detection   | [Code](./Algorithms/08_2_ptr_technique/flyods_cycle_detection.cpp)  | O(n)            |[142. Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/description/)|
+| Sliding Window (Fixed)    | [Code](./Algorithms/08_2_ptr_technique/sliding_window_fixed.cpp)    | O(n)            |[1343. Number of Sub-arrays of Size K and Average Greater than or Equal to Threshold](https://leetcode.com/problems/number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold/description/)|
+| Sliding Window (Variable) | [Code](./Algorithms/08_2_ptr_technique/sliding_window_variable.cpp) | O(n)            |[424. Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/description/)|
 
 ### Trees
 
-| Traversal             | Implementation                        |
-| --------------------- | ------------------------------------- |
-| Level Order Traversal | [Code](./Algorithms/03_trees/bfs.cpp) |
-| DFS                   | [Code](./Algorithms/03_trees/dfs.cpp) |
+| Traversal             | Implementation                        | Practice Problem(s)                  |
+| --------------------- | ------------------------------------- |------------------------------------- |
+| Level Order Traversal | [Code](./Algorithms/03_trees/bfs.cpp) |[102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/description/)
+| DFS                   | [Code](./Algorithms/03_trees/dfs.cpp) | [105. Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/)<br/>[173. Binary Search Tree Iterator](https://leetcode.com/problems/binary-search-tree-iterator/description/)<br/>[145. Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/description/) [Note: Implement iterative version]
 
 ### Backtracking
 
-| Problem                | Implementation                                                      | Complexity                 |
-| ---------------------- | ------------------------------------------------------------------- | -------------------------- |
-| Backtracking in Matrix | [Code](./Algorithms/04_back_tracking/00_backtracking_in_matrix.cpp) | TC: O(4^(m×n)), SC: O(m×n) |
-| Backtracking in Tree   | [Code](./Algorithms/04_back_tracking/01_backtracking_in_tree.cpp)   | TC: O(n), SC: O(n)         |
-| Subsets                | [Code](./Algorithms/04_back_tracking/02_subsets.cpp)                | TC: O(2^n)                 |
-| Combinations           | [Code](./Algorithms/04_back_tracking/03_combinations.cpp)           | TC: O(k × C(n,k))          |
-| Permutations           | [Code](./Algorithms/04_back_tracking/04_permutations.cpp)           | TC: O(n!)                  |
+| Problem                | Implementation                                                      | Complexity                 |Practice Problem(s)|
+| ---------------------- | ------------------------------------------------------------------- | -------------------------- |------------------ |
+| Backtracking in Matrix | [Code](./Algorithms/04_back_tracking/00_backtracking_in_matrix.cpp) | TC: O(4^(m×n)), SC: O(m×n) | []()
+| Backtracking in Tree   | [Code](./Algorithms/04_back_tracking/01_backtracking_in_tree.cpp)   | TC: O(n), SC: O(n)         | [112. Path Sum](https://leetcode.com/problems/path-sum/description/)
+| Subsets                | [Code](./Algorithms/04_back_tracking/02_subsets.cpp)                | TC: O(2^n)                 | [90. Subsets II](https://leetcode.com/problems/subsets-ii/)
+| Combinations           | [Code](./Algorithms/04_back_tracking/03_combinations.cpp)           | TC: O(k × C(n,k))          | [17. Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)
+| Permutations           | [Code](./Algorithms/04_back_tracking/04_permutations.cpp)           | TC: O(n!)                  | [47. Permutations II](https://leetcode.com/problems/permutations-ii/description/)
 
 ### Graph Algorithms
 
