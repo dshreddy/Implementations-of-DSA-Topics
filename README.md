@@ -1,180 +1,88 @@
-# Implementation of DSA Topics 
+## Data Structures
 
-## Data Structures 
-
-1. Stack
-    - [Code](./Data%20Structures/01_arrays/03_stack.cpp)
-    - TC
-        - push : O(1) 
-        - pop : O(1)
-        - top : O(1)
-2. Queue
-    - [Code](./Data%20Structures/02_linked_list/03_queue.cpp)
-    - TC 
-        - push : O(1) 
-        - pop : O(1)
-        - front : O(1)
-3. Linked List
-    - [Singly](./Data%20Structures/02_linked_list/01_singly.cpp)
-    - [Doubly](./Data%20Structures/02_linked_list/02_doubly.cpp)
-    - TC 
-        - insert : O(n) 
-        - remove : O(n)
-        - get : O(n)
-        - n = number of nodes in the list
-4. Trees 
-    1. BST
-        - [Code](./Data%20Structures/03_trees/02_bst.cpp)
-        - TC 
-            - search : O(log n)
-            - insert : O(log n)
-            - delete : O(log n)
-            - n = number of nodes in the tree
-    2. Heap 
-        - [Code](./Data%20Structures/03_trees/03_heap.cpp)
-        - TC
-            - top : O(1)
-            - insert : O(log n)
-            - delete : O(log n)
-            - n = number of nodes in the heap
-    3. Trie 
-        - [Code](./Data%20Structures/03_trees/04_trie.cpp)
-        - TC
-            - insert : O(l) where l = length of word
-            - search : O(l) where l = length of word
-            - prefixSearch : O(l) where l = length of prefix
-    4. DSU
-        - [Code](./Data%20Structures/03_trees/05_dsu.cpp)
-        - TC
-            - unionByRank : O(1) 
-            - findByPathCompression : O(1)
-    5. Segment Trees
-        - [Code](./Data%20Structures/03_trees/06_segment_trees.cpp)
-        - TC
-            - build : O(log n) 
-            - update : O(log n)
-            - query : O(log n)
-5. Graphs 
-    - [Code](./Data%20Structures/05_graphs/adj_list.cpp)
-    - BFS
-        - TC : O(V+E)
-        - SC : O(V)
-    - DFS
-        - TC : O(V+E)
-        - SC : O(V)
-
+| Data Structure | Implementation | Operations (Time Complexity)                         |
+| -------------- | ---------------| ---------------------------------------------------- |
+| Stack          | [Code](./Data%20Structures/01_arrays/03_stack.cpp) | push: O(1),<br/> pop: O(1),<br/> top: O(1)|
+| Queue          | [Code](./Data%20Structures/02_linked_list/03_queue.cpp)| push: O(1),<br/> pop: O(1),<br/> front: O(1)|
+| Linked List    | [Singly](./Data%20Structures/02_linked_list/01_singly.cpp), [Doubly](./Data%20Structures/02_linked_list/02_doubly.cpp) | insert: O(n),<br/> remove: O(n),<br/> get: O(n)|
+| BST            | [Code](./Data%20Structures/03_trees/02_bst.cpp)| search: O(log n),<br/> insert: O(log n),<br/> delete: O(log n)|
+| Heap           | [Code](./Data%20Structures/03_trees/03_heap.cpp)| top: O(1),<br/> insert: O(log n),<br/> delete: O(log n)|
+| Trie           | [Code](./Data%20Structures/03_trees/04_trie.cpp)| insert: O(l),<br/> search: O(l),<br/> prefixSearch: O(l)|
+| DSU            | [Code](./Data%20Structures/03_trees/05_dsu.cpp)| unionByRank: O(1),<br/> findByPathCompression: O(1)|
+| Segment Tree   | [Code](./Data%20Structures/03_trees/06_segment_trees.cpp)| build: O(n),<br/> update: O(log n),<br/> query: O(log n)|
 
 ## Algorithms & Techniques
 
-1. Prefix Sum
-    1. 1D
-        - [Code](./Algorithms/09_prefix_sum/1d_sum.cpp)
-        - TC 
-            - O(n) for building prefix sum array
-            - O(1) for queries 
-    1. 2D 
-        - [Code](./Algorithms/09_prefix_sum/2d_sum.cpp)
-        - TC 
-            - O(n*n) for building prefix sum matrix
-            - O(1) for queries  
-1. Sorting 
-    1. Selection Sort
-        - [Code](./Algorithms/02_sorting/01_selection_sort.cpp)
-        - TC : O(n^2)
-        - SC : O(1)
-    1. Insertion Sort
-        - [Code](./Algorithms/02_sorting/02_insertion_sort.cpp)
-        - TC : O(n^2)
-        - SC : O(1)
-    1. Merge Sort
-        - [Code](./Algorithms/02_sorting/03_merge_sort.cpp)
-        - TC : O(log n)
-        - SC : O(n)
-    1. Quick Sort
-        - [Code](./Algorithms/02_sorting/04_quick_sort.cpp)
-        - TC : O(log n)
-        - SC : O(1)
-    1. Cycle Sort
-        - [Code](./Algorithms/02_sorting/05_cycle_sort.cpp)
-        - TC : O(n)
-        - SC : O(1)
-1. 2 Pointers 
-    1. Two Sum
-        - [Code](./Algorithms/08_2_ptr_technique/2_ptr.cpp)
-        - TC : O(n)
-    1. Binary Search
-        - [Code](./Algorithms/08_2_ptr_technique/binary_search.cpp)
-        - TC : O(log n)
-    1. Floyds Cycle Detection
-        - [Code](./Algorithms/08_2_ptr_technique/flyods_cycle_detection.cpp)
-        - TC : O(n)
-    1. Sliding Window Fixed
-        - [Code](./Algorithms/08_2_ptr_technique/sliding_window_fixed.cpp)
-        - TC : O(n)
-    1. Sliding Window Variable
-        - [Code](./Algorithms/08_2_ptr_technique/sliding_window_variable.cpp)
-        - TC : O(n)
-1. Trees
-    1. Level Order Traversal
-        - [Code](./Algorithms/03_trees/bfs.cpp)
-    1. DFS
-        - [Code](./Algorithms/03_trees/dfs.cpp)
-1. BackTracking
-    1. Backtracking In Matrix 
-        - [Code](./Algorithms/04_back_tracking/00_backtracking_in_matrix.cpp)
-        - TC : O(4 ^ (m*n)) where m = rows in matrix, n = columns in the matrix
-        - SC : O(m*n)
-    1. Backtracking In Tree
-        - [Code](./Algorithms/04_back_tracking/01_backtracking_in_tree.cpp)
-        - TC : O(n) where n = number of nodes in the tree
-        - SC : O(n)
-    1. Subsets
-        - [Code](./Algorithms/04_back_tracking/01_subsets.cpp)
-        - TC : O(2^n)
-    1. Combinations 
-        - [Code](./Algorithms/04_back_tracking/02_combinations.cpp)
-        - TC : O(k * C(n, k))
-    1. Permutations 
-        - [Code](./Algorithms/04_back_tracking/03_permutations.cpp)
-        - TC : O(n!)
-1. Graphs 
-    1. Dijkstra
-        - [Code](./Algorithms/05_graphs/03_dijkstra.cpp)
-        - TC : O( E log E) [In worst SC case, we need to push & pop E times from the heap, this can also be written as O(E log V) since E = V^2 in this case]
-        - SC : O(E) [When every node is connected to every other node]
-    1. Prims
-        - [Code](./Algorithms/05_graphs/04_prims.cpp)
-        - TC : O( E log E)
-        - SC : O(E) [When every node is connected to every other node]
-    1. Kruskal
-        - [Code](./Algorithms/05_graphs/05_kruskal.cpp)
-        - TC : O(E log E)
-        - SC : O(E)
-    1. Topological Sort
-        - [Code](./Algorithms/05_graphs/06_topological_sort.cpp)
-        - TC : O(V+E)
-        - SC : O(V) [when all nodes have 0 indegree in the given graph]
-1. DP
-    1. 1D DP
-        1. Fibonaci
-            - [Code](./Algorithms/06_dp/1d_dp/fibonacci.cpp)
-            - TC : O(n)
-        1. House Robber
-            - [Code](./Algorithms/06_dp/1d_dp/house_robber.cpp)
-            - TC : O(n)
-        1. Kadane
-            - [Code](./Algorithms/06_dp/1d_dp/kadane.cpp)
-            - TC: O(n)
-    1. 2D DP
-        1. 0-1 KnapSack
-            - [Code](./Algorithms/06_dp/2d_dp/knapsack_01.cpp)
-            - TC : O(N*C)
-        1. Unbounded KnapSack
-            - [Code](./Algorithms/06_dp/2d_dp/knapsack_unbounded.cpp)
-            - TC : O(N*C)
-        1. LCS
-            - [Code](./Algorithms/06_dp/2d_dp/lcs.cpp)
-            - TC : O(l1*l2)
-        1. Palindromes
-            - [Code](./Algorithms/06_dp/2d_dp/palindrome.cpp)
-            - TC : O(n*n)
+### Prefix Sum
+
+| Technique     | Implementation                                | Operations (Time Complexity) |
+| ------------- | --------------------------------------------- | ---------------------------- |
+| 1D Prefix Sum | [Code](./Algorithms/09_prefix_sum/1d_sum.cpp) | Build: O(n),<br/> Query: O(1)     |
+| 2D Prefix Sum | [Code](./Algorithms/09_prefix_sum/2d_sum.cpp) | Build: O(n²),<br/> Query: O(1)    |
+
+### Sorting
+
+| Algorithm      | Implementation                                        | Time            | Space    |
+| -------------- | ----------------------------------------------------- | --------------- | -------- |
+| Selection Sort | [Code](./Algorithms/02_sorting/01_selection_sort.cpp) | O(n²)           | O(1)     |
+| Insertion Sort | [Code](./Algorithms/02_sorting/02_insertion_sort.cpp) | O(n²)           | O(1)     |
+| Merge Sort     | [Code](./Algorithms/02_sorting/03_merge_sort.cpp)     | O(n log n)      | O(n)     |
+| Quick Sort     | [Code](./Algorithms/02_sorting/04_quick_sort.cpp)     | O(n log n) Avg. | O(log n) |
+| Cycle Sort     | [Code](./Algorithms/02_sorting/05_cycle_sort.cpp)     | O(n)            | O(1)     |
+
+### Two Pointers
+
+| Algorithm                 | Implementation                                                      | Time Complexity |
+| ------------------------- | ------------------------------------------------------------------- | --------------- |
+| Two Sum                   | [Code](./Algorithms/08_2_ptr_technique/2_ptr.cpp)                   | O(n)            |
+| Binary Search             | [Code](./Algorithms/08_2_ptr_technique/binary_search.cpp)           | O(log n)        |
+| Floyd's Cycle Detection   | [Code](./Algorithms/08_2_ptr_technique/flyods_cycle_detection.cpp)  | O(n)            |
+| Sliding Window (Fixed)    | [Code](./Algorithms/08_2_ptr_technique/sliding_window_fixed.cpp)    | O(n)            |
+| Sliding Window (Variable) | [Code](./Algorithms/08_2_ptr_technique/sliding_window_variable.cpp) | O(n)            |
+
+### Trees
+
+| Traversal             | Implementation                        |
+| --------------------- | ------------------------------------- |
+| Level Order Traversal | [Code](./Algorithms/03_trees/bfs.cpp) |
+| DFS                   | [Code](./Algorithms/03_trees/dfs.cpp) |
+
+### Backtracking
+
+| Problem                | Implementation                                                      | Complexity                 |
+| ---------------------- | ------------------------------------------------------------------- | -------------------------- |
+| Backtracking in Matrix | [Code](./Algorithms/04_back_tracking/00_backtracking_in_matrix.cpp) | TC: O(4^(m×n)), SC: O(m×n) |
+| Backtracking in Tree   | [Code](./Algorithms/04_back_tracking/01_backtracking_in_tree.cpp)   | TC: O(n), SC: O(n)         |
+| Subsets                | [Code](./Algorithms/04_back_tracking/02_subsets.cpp)                | TC: O(2^n)                 |
+| Combinations           | [Code](./Algorithms/04_back_tracking/03_combinations.cpp)           | TC: O(k × C(n,k))          |
+| Permutations           | [Code](./Algorithms/04_back_tracking/04_permutations.cpp)           | TC: O(n!)                  |
+
+### Graph Algorithms
+
+| Algorithm        | Implementation                                         | Complexity               |
+| ---------------- | ------------------------------------------------------ | ------------------------ |
+| Dijkstra         | [Code](./Algorithms/05_graphs/03_dijkstra.cpp)         | TC: O(E log E), SC: O(E) |
+| Prim's           | [Code](./Algorithms/05_graphs/04_prims.cpp)            | TC: O(E log E), SC: O(E) |
+| Kruskal          | [Code](./Algorithms/05_graphs/05_kruskal.cpp)          | TC: O(E log E), SC: O(E) |
+| Topological Sort | [Code](./Algorithms/05_graphs/06_topological_sort.cpp) | TC: O(V + E), SC: O(V)   |
+| BFS       | [Code](./Data%20Structures/05_graphs/adj_list.cpp) | TC: O(V + E), SC: O(V) |
+| DFS       | [Code](./Data%20Structures/05_graphs/adj_list.cpp) | TC: O(V + E), SC: O(V) |
+
+### Dynamic Programming
+
+#### 1D DP
+
+| Problem            | Implementation                                    | Time Complexity |
+| ------------------ | ------------------------------------------------- | --------------- |
+| Fibonacci          | [Code](./Algorithms/06_dp/1d_dp/fibonacci.cpp)    | O(n)            |
+| House Robber       | [Code](./Algorithms/06_dp/1d_dp/house_robber.cpp) | O(n)            |
+| Kadane's Algorithm | [Code](./Algorithms/06_dp/1d_dp/kadane.cpp)       | O(n)            |
+
+#### 2D DP
+
+| Problem                       | Implementation                                          | Time Complexity |
+| ----------------------------- | ------------------------------------------------------- | --------------- |
+| 0/1 Knapsack                  | [Code](./Algorithms/06_dp/2d_dp/knapsack_01.cpp)        | O(N × C)        |
+| Unbounded Knapsack            | [Code](./Algorithms/06_dp/2d_dp/knapsack_unbounded.cpp) | O(N × C)        |
+| LCS                           | [Code](./Algorithms/06_dp/2d_dp/lcs.cpp)                | O(l1 × l2)      |
+| Longest Palindromic Substring | [Code](./Algorithms/06_dp/2d_dp/palindrome.cpp)         | O(n²)           |
