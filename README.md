@@ -5,38 +5,38 @@
 | Stack          | [Code](./Data%20Structures/01_arrays/03_stack.cpp) | push: O(1),<br/> pop: O(1),<br/> top: O(1)|[20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses/description/)
 | Queue          | [Code](./Data%20Structures/02_linked_list/03_queue.cpp)| push: O(1),<br/> pop: O(1),<br/> front: O(1)|[1700. Number of Students Unable to Eat Lunch](https://leetcode.com/problems/number-of-students-unable-to-eat-lunch/description/)|
 | Linked List    | [Singly](./Data%20Structures/02_linked_list/01_singly.cpp), [Doubly](./Data%20Structures/02_linked_list/02_doubly.cpp) | insert: O(n),<br/> remove: O(n),<br/> get: O(n)|[707. Design Linked List](https://leetcode.com/problems/design-linked-list/)|
-| BST            | [Code](./Data%20Structures/03_trees/02_bst.cpp)| search: O(log n),<br/> insert: O(log n),<br/> delete: O(log n)|
-| Heap           | [Code](./Data%20Structures/03_trees/03_heap.cpp)| top: O(1),<br/> insert: O(log n),<br/> delete: O(log n)|
-| Trie           | [Code](./Data%20Structures/03_trees/04_trie.cpp)| insert: O(l),<br/> search: O(l),<br/> prefixSearch: O(l)|
-| DSU            | [Code](./Data%20Structures/03_trees/05_dsu.cpp)| unionByRank: O(1),<br/> findByPathCompression: O(1)|
-| Segment Tree   | [Code](./Data%20Structures/03_trees/06_segment_trees.cpp)| build: O(n),<br/> update: O(log n),<br/> query: O(log n)|
+| BST            | [Code](./Data%20Structures/03_trees/02_bst.cpp)| search: O(log n),<br/> insert: O(log n),<br/> delete: O(log n)|[700. Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree/description/)<br/>[701. Insert into a Binary Search Tree](https://leetcode.com/problems/insert-into-a-binary-search-tree/description/)<br/>[450. Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst/)|
+| Heap           | [Code](./Data%20Structures/03_trees/03_heap.cpp)| top: O(1),<br/> insert: O(log n),<br/> delete: O(log n)|[703. Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/description/)|
+| Trie           | [Code](./Data%20Structures/03_trees/04_trie.cpp)| insert: O(l),<br/> search: O(l),<br/> prefixSearch: O(l)|[208. Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/description/)|
+| DSU            | [Code](./Data%20Structures/03_trees/05_dsu.cpp)| unionByRank: O(1),<br/> findByPathCompression: O(1)|[721. Accounts Merge](https://leetcode.com/problems/accounts-merge/description/)|
+| Segment Tree   | [Code](./Data%20Structures/03_trees/06_segment_trees.cpp)| build: O(n),<br/> update: O(log n),<br/> query: O(log n)|[307. Range Sum Query - Mutable](https://leetcode.com/problems/range-sum-query-mutable/description/)|
 
 ## Algorithms & Techniques
 
 ### Prefix Sum
 
-| Technique     | Implementation                                | Operations (Time Complexity) |
-| ------------- | --------------------------------------------- | ---------------------------- |
-| 1D Prefix Sum | [Code](./Algorithms/09_prefix_sum/1d_sum.cpp) | Build: O(n),<br/> Query: O(1)     |
-| 2D Prefix Sum | [Code](./Algorithms/09_prefix_sum/2d_sum.cpp) | Build: O(n²),<br/> Query: O(1)    |
+| Technique     | Implementation                                | Operations (Time Complexity) | Practice Problem(s) |
+| ------------- | --------------------------------------------- | ---------------------------- |---------------------|
+| 1D Prefix Sum | [Code](./Algorithms/09_prefix_sum/1d_sum.cpp) | Build: O(n),<br/> Query: O(1)     |[303. Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/description/)|
+| 2D Prefix Sum | [Code](./Algorithms/09_prefix_sum/2d_sum.cpp) | Build: O(n²),<br/> Query: O(1)    |[304. Range Sum Query 2D - Immutable](https://leetcode.com/problems/range-sum-query-2d-immutable/description/)|
 
 ### Sorting
 
-| Algorithm      | Implementation                                        | Time            | Space    |
-| -------------- | ----------------------------------------------------- | --------------- | -------- |
-| Selection Sort | [Code](./Algorithms/02_sorting/01_selection_sort.cpp) | O(n²)           | O(1)     |
-| Insertion Sort | [Code](./Algorithms/02_sorting/02_insertion_sort.cpp) | O(n²)           | O(1)     |
-| Merge Sort     | [Code](./Algorithms/02_sorting/03_merge_sort.cpp)     | O(n log n)      | O(n)     |
-| Quick Sort     | [Code](./Algorithms/02_sorting/04_quick_sort.cpp)     | O(n log n) Avg. | O(log n) |
-| Cycle Sort     | [Code](./Algorithms/02_sorting/05_cycle_sort.cpp)     | O(n)            | O(1)     |
+| Algorithm      | Implementation                                        | Time            | Space    | Practice Problem(s) |
+| -------------- | ----------------------------------------------------- | --------------- | -------- |-------------------- |
+| Selection Sort | [Code](./Algorithms/02_sorting/01_selection_sort.cpp) | O(n²)           | O(1)     | [912. Sort an Array](https://leetcode.com/problems/sort-an-array/description/) |
+| Insertion Sort | [Code](./Algorithms/02_sorting/02_insertion_sort.cpp) | O(n²)           | O(1)     | [912. Sort an Array](https://leetcode.com/problems/sort-an-array/description/) |
+| Merge Sort     | [Code](./Algorithms/02_sorting/03_merge_sort.cpp)     | O(n log n)      | O(n)     | [912. Sort an Array](https://leetcode.com/problems/sort-an-array/description/) |
+| Quick Sort     | [Code](./Algorithms/02_sorting/04_quick_sort.cpp)     | O(n log n) Avg. | O(log n) | [912. Sort an Array](https://leetcode.com/problems/sort-an-array/description/) |
+| Cycle Sort     | [Code](./Algorithms/02_sorting/05_cycle_sort.cpp)     | O(n)            | O(1)     | [912. Sort an Array](https://leetcode.com/problems/sort-an-array/description/) |
 
 ### Two Pointers
 
-| Algorithm                 | Implementation                                                      | Time Complexity |
-| ------------------------- | ------------------------------------------------------------------- | --------------- |
-| Two Sum                   | [Code](./Algorithms/08_2_ptr_technique/2_ptr.cpp)                   | O(n)            |
-| Binary Search             | [Code](./Algorithms/08_2_ptr_technique/binary_search.cpp)           | O(log n)        |
-| Floyd's Cycle Detection   | [Code](./Algorithms/08_2_ptr_technique/flyods_cycle_detection.cpp)  | O(n)            |
+| Algorithm                 | Implementation                                                      | Time Complexity | Practice Problem(s) |
+| ------------------------- | ------------------------------------------------------------------- | --------------- |-------------------- |
+| Two Sum                   | [Code](./Algorithms/08_2_ptr_technique/2_ptr.cpp)                   | O(n)            |[167. Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/)|
+| Binary Search             | [Code](./Algorithms/08_2_ptr_technique/binary_search.cpp)           | O(log n)        |[704. Binary Search](https://leetcode.com/problems/binary-search/description/)|
+| Floyd's Cycle Detection   | [Code](./Algorithms/08_2_ptr_technique/flyods_cycle_detection.cpp)  | O(n)            |[]()|
 | Sliding Window (Fixed)    | [Code](./Algorithms/08_2_ptr_technique/sliding_window_fixed.cpp)    | O(n)            |
 | Sliding Window (Variable) | [Code](./Algorithms/08_2_ptr_technique/sliding_window_variable.cpp) | O(n)            |
 
