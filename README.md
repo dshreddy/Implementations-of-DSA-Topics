@@ -28,7 +28,7 @@
 | Insertion Sort | [Code](./Algorithms/02_sorting/02_insertion_sort.cpp) | O(n²)           | O(1)     | [912. Sort an Array](https://leetcode.com/problems/sort-an-array/description/) |
 | Merge Sort     | [Code](./Algorithms/02_sorting/03_merge_sort.cpp)     | O(n log n)      | O(n)     | [912. Sort an Array](https://leetcode.com/problems/sort-an-array/description/) |
 | Quick Sort     | [Code](./Algorithms/02_sorting/04_quick_sort.cpp)     | O(n log n) Avg. | O(log n) | [912. Sort an Array](https://leetcode.com/problems/sort-an-array/description/) |
-| Cycle Sort     | [Code](./Algorithms/02_sorting/05_cycle_sort.cpp)     | O(n)            | O(1)     | [912. Sort an Array](https://leetcode.com/problems/sort-an-array/description/) |
+| Cycle Sort     | [Code](./Algorithms/02_sorting/05_cycle_sort.cpp)     | O(n)            | O(1)     | [41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/description/) |
 
 ### Two Pointers
 
