@@ -7,23 +7,23 @@ public:
     vector<vector<int>> prefix;
 
     NumMatrix(vector<vector<int>>& matrix) {
-        int m = matrix.size(), n = matrix[0].size(), rowSum = 0;
+
+        int m = matrix.size(), n = matrix[0].size();
         prefix.resize(m+1, vector<int>(n+1, 0));
 
-        for(int i = 1; i <= m; i++) {
+        int rowSum;
+
+        for(int i = 0; i < m; i++) {
             rowSum = 0;
-            for(int j = 1; j <= n; j++) {
-                rowSum += matrix[i-1][j-1];
-                prefix[i][j] = rowSum + prefix[i-1][j];
-                cout<<prefix[i][j]<<"\t";
+            for(int j = 0; j < n; j++) {
+                rowSum += matrix[i][j];
+                prefix[i+1][j+1] = rowSum + prefix[i][j+1];
             }
-            cout<<"\n";
         }
-
-
     }
     
     int sumRegion(int row1, int col1, int row2, int col2) {
+        
         row1++;
         col1++;
         row2++;
