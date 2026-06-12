@@ -1,153 +1,186 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-struct ListNode{
+struct ListNode {
 public:
-
     int val;
-    ListNode* next;
-    ListNode* prev;
+    ListNode *next, *prev;
 
-    ListNode(): val(0), next(nullptr) {}
-    ListNode(int val): val(val), next(nullptr) {}
+    ListNode() : val(0), next(nullptr), prev(nullptr) {}
+    ListNode(int val) : val(val), next(nullptr), prev(nullptr) {}
 };
 
-class DoublyLinkedList{
+class MyLinkedList {
 private:
-
-    ListNode* head = nullptr;
-    ListNode* tail = nullptr;
+    ListNode *head = nullptr;
+    ListNode *tail = nullptr;
     int size = 0;
+
+    // O(1)
+    // helper, caller updates size
+    void addAtHead(int val) {
+        ListNode *newN = new ListNode(val);
+        if(head) {
+            newN->next = head;
+            head->prev = newN;
+            head = newN;
+        } else {
+            head = newN;
+            tail = head;
+        }
+    }
+    
+    // O(1)
+    // helper, caller updates size
+    void addAtTail(int val) {
+        ListNode *newN = new ListNode(val);
+        if(tail) {
+            tail->next = newN;
+            newN->prev = tail;
+            tail = newN;
+        } else {
+            head = newN;
+            tail = head;
+        }
+    }
+
+    // O(1)
+    // helper, caller updates size
+    void deleteAtHead() {
+        ListNode *temp = head;
+        if(head == tail) {
+            head = nullptr;
+            tail = nullptr;
+        } else {
+            head = head->next;
+            head->prev = nullptr;
+        }
+        delete temp;
+    }
+
+    // O(1)
+    // helper, caller updates size
+    void deleteAtTail() {
+        ListNode *temp = tail;
+        if(head == tail) {
+            head = nullptr;
+            tail = nullptr;
+        } else {
+            tail = tail->prev;
+            tail->next = nullptr;
+        }
+        delete temp;
+    }
 
 public:
 
+    // O(1)
     int getSize() {
         return size;
     }
-    
-    // Assuming 0 based indexing
-    void insert(int index, int val) {
-        
-        // Invalid cases
-        if(index < 0 || index > size) throw std::out_of_range("Index out of bounds");
 
-        size++;
-        ListNode* prev = nullptr;
-        ListNode* curr = head;
-        ListNode* newNode = new ListNode(val);
+    // O(n)
+    int get(int index) {
+        if(index < 0 || index >= size) return -1;
 
-        for(int i = 0; i < index; i++) {
-            prev = curr;
-            curr = curr->next;
-        }
-
-        // prev null implies we're inserting at start, so update head and if needed update tail
-        if(prev == nullptr) {
-            if(head) {
-                newNode->next = head;
-                head->prev = newNode;
-                head = newNode;
-            } else {
-                // Empty list case
-                head = newNode;
-                tail = head;
-            }
-            return;
-        } 
-
-        prev->next = newNode;
-        newNode->prev = prev;
-        newNode->next = curr;
-        if(curr) curr->prev = newNode;
-        else tail = newNode; // curr null implies we're inserting at end, so update tail
+        ListNode *temp = head;
+        while(index--) temp = temp->next;
+        return temp->val;
     }
 
-    // Assuming 0 based indexing
-    void remove(int index) {
-        // Invalid cases
-        if(index < 0 || index >= size) throw std::out_of_range("Index out of bounds");
-
-        size--;
-        ListNode* prev = nullptr;
-        ListNode* curr = head;
-
-        for(int i = 0; i < index; i++) {
-            prev = curr;
-            curr = curr->next;
-        }
-
-        // prev null implies we're deleting at start, so update head and if needed update tail 
-        if(prev == nullptr) {
-            if(head->next) {
-                head = head->next;
-                head->prev = nullptr;
-            } else {
-                // Single element case
-                head = nullptr;
-                tail = nullptr;
-            }
-            delete curr;
-            return;
-        }
-        
-        prev->next = curr->next;
-        if(curr->next) curr->next->prev = prev;
-        else tail = prev; // curr->next null implies we're deleteing the current tail, so update tail
-        delete curr;
-    }
-
+    // O(n)
     void print() {
-        ListNode* temp = head;
+        ListNode *temp = head;
         while(temp) {
-            cout<<temp->val<<"\t";
+            cout << temp->val << "\t";
             temp = temp->next;
         }
-        cout<<"\n";
+        cout << endl;
+    }
+    
+    // O(n)
+    void addAtIndex(int index, int val) {
+        if(index < 0 || index > size) return;
+        if(index == 0) addAtHead(val);
+        else if(index == size) addAtTail(val);
+        else {
+            ListNode *p = nullptr, *q = head;
+            while(index--) {
+                p = q;
+                q = q->next;
+            }
+
+            ListNode *newN = new ListNode(val);
+
+            p->next = newN;
+            newN->prev = p;
+            newN->next = q;
+            q->prev = newN;
+        }
+        size++;
+    }
+    
+    // O(n)
+    void deleteAtIndex(int index) {
+
+        if(index < 0 || index >= size) return;
+        if(index == 0) deleteAtHead();
+        else if(index == size - 1) deleteAtTail();
+        else {
+            ListNode *p = nullptr, *q = head;
+            while(index--) {
+                p = q;
+                q = q->next;
+            }
+
+            p->next = q->next;
+            q->next->prev = p;
+            delete q;
+        }
+        size--;
     }
 
-    ~DoublyLinkedList()
-    {
-        ListNode *curr = head;
-        while (curr)
-        {
-            ListNode *temp = curr;
-            curr = curr->next;
+    ~MyLinkedList() {
+        while(head) {
+            ListNode* temp = head;
+            head = head->next;
             delete temp;
         }
     }
 };
 
+int main()
+{
 
-int main() {
-
-    DoublyLinkedList list;
-    list.insert(0, 0);
-    list.insert(1, 1);
-    list.insert(2, 2);
-    list.insert(3, 3);
+    MyLinkedList list;
+    list.addAtIndex(0, 0);
+    list.addAtIndex(1, 1);
+    list.addAtIndex(2, 2);
+    list.addAtIndex(3, 3);
     list.print();
 
+
     // Insert at head
-    list.insert(0, -1);
+    list.addAtIndex(0, -1);
     list.print();
 
     // Insert at middle
-    list.insert(2, -2);
+    list.addAtIndex(2, -2);
     list.print();
 
     // Insert at end
-    list.insert(list.getSize(), -3);
+    list.addAtIndex(list.getSize(), -3);
     list.print();
 
     // Remove at head
-    list.remove(0);
+    list.deleteAtIndex(0);
     list.print();
 
     // Remove at middle
-    list.remove(2);
-    list.print(); 
+    list.deleteAtIndex(1);
+    list.print();
 
     // Remove at end
-    list.remove(list.getSize()-1);
+    list.deleteAtIndex(list.getSize() - 1);
     list.print();
 }
