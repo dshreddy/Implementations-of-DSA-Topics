@@ -1,8 +1,7 @@
 #include <iostream>
 using namespace std;
 
-struct ListNode
-{
+struct ListNode {
 public:
     int val;
     ListNode *next;
@@ -11,146 +10,120 @@ public:
     ListNode(int val) : val(val), next(nullptr) {}
 };
 
-class SinglyLinkedList
-{
+class MyLinkedList {
 private:
     ListNode *head = nullptr;
     ListNode *tail = nullptr;
     int size = 0;
 
+    // O(1)
+    // helper, caller updates size
+    void addAtHead(int val) {
+        ListNode *newN = new ListNode(val);
+        if(head) {
+            newN->next = head;
+            head = newN;
+        } else {
+            head = newN;
+            tail = head;
+        }
+    }
+    
+    // O(1)
+    // helper, caller updates size
+    void addAtTail(int val) {
+        ListNode *newN = new ListNode(val);
+        if(tail) {
+            tail->next = newN;
+            tail = newN;
+        } else {
+            head = newN;
+            tail = head;
+        }
+    }
+
+    // O(1)
+    // helper, caller updates size
+    void deleteAtHead() {
+        ListNode *temp = head;
+        if(head == tail) {
+            head = nullptr;
+            tail = nullptr;
+        } else {
+            head = head->next;
+        }
+        delete temp;
+    }
+
 public:
-    int getSize()
-    {
+
+    // O(1)
+    int getSize() {
         return size;
     }
 
     // O(n)
-    // Assuming 0 based indexing
-    void insert(int index, int val)
-    {
+    int get(int index) {
+        if(index < 0 || index >= size) return -1;
 
-        // Invalid cases
-        if (index < 0 || index > size)
-            throw std::out_of_range("Index out of bounds");
-
-        size++;
-        ListNode *prev = nullptr;
-        ListNode *curr = head;
-        ListNode *newNode = new ListNode(val);
-
-        for (int i = 0; i < index; i++)
-        {
-            prev = curr;
-            curr = curr->next;
-        }
-
-        // prev null implies we're inserting at start, so update head and if needed update tail
-        if (prev == nullptr)
-        {
-            if (head)
-            {
-                newNode->next = head;
-                head = newNode;
-            }
-            else
-            {
-                // Empty list case
-                head = newNode;
-                tail = head;
-            }
-            return;
-        }
-
-        prev->next = newNode;
-        newNode->next = curr;
-        if (curr == nullptr)
-            tail = newNode; // curr null implies we're inserting at end, so update tail
+        ListNode *temp = head;
+        while(index--) temp = temp->next;
+        return temp->val;
     }
 
     // O(n)
-    // Assuming 0 based indexing
-    void remove(int index)
-    {
-        // Invalid cases
-        if (index < 0 || index >= size)
-            throw std::out_of_range("Index out of bounds");
-
-        size--;
-        ListNode *prev = nullptr;
-        ListNode *curr = head;
-
-        for (int i = 0; i < index; i++)
-        {
-            prev = curr;
-            curr = curr->next;
-        }
-
-        // prev null implies we're deleting at start, so update head and if needed update tail
-        if (prev == nullptr)
-        {
-            if (head->next)
-            {
-                head = head->next;
-            }
-            else
-            {
-                // Single element case
-                head = nullptr;
-                tail = nullptr;
-            }
-            delete curr;
-            return;
-        }
-
-        prev->next = curr->next;
-        if (curr->next == nullptr)
-            tail = prev; // curr->next null implies we're deleteing the current tail, so update tail
-        delete curr;
-    }
-
-    void reverseList()
-    {
-
-        // Atleast 2 elemnts should be present for reversal
-        if (!head || !head->next)
-            return;
-
-        ListNode *prev = nullptr;
-        ListNode *curr = head;
-        ListNode *next = head->next;
-
-        while (curr)
-        {
-            curr->next = prev;
-            prev = curr;
-            curr = next;
-            if (next)
-                next = next->next;
-        }
-
-        tail = head;
-        head = prev;
-        return;
-    }
-
-    void print()
-    {
+    void print() {
         ListNode *temp = head;
-        while (temp)
-        {
+        while(temp) {
             cout << temp->val << "\t";
             temp = temp->next;
         }
-        cout << "\n";
+        cout << endl;
+    }
+    
+    // O(n)
+    void addAtIndex(int index, int val) {
+        if(index < 0 || index > size) return;
+        if(index == 0) addAtHead(val);
+        else if(index == size) addAtTail(val);
+        else {
+            ListNode *p = nullptr, *q = head;
+            while(index--) {
+                p = q;
+                q = q->next;
+            }
+
+            ListNode *newN = new ListNode(val);
+
+            p->next = newN;
+            newN->next = q;
+        }
+        size++;
+    }
+    
+    // O(n)
+    void deleteAtIndex(int index) {
+
+        if(index < 0 || index >= size) return;
+        if(index == 0) deleteAtHead();
+        else {
+            ListNode *p = nullptr, *q = head;
+            while(index--) {
+                p = q;
+                q = q->next;
+            }
+
+            p->next = q->next;
+            if(q == tail) tail = p;
+            delete q;
+        }
+        size--;
     }
 
-    ~SinglyLinkedList()
-    {
-        ListNode *curr = head;
-        while (curr)
-        {
-            ListNode *temp = curr;
-            curr = curr->next;
+    ~MyLinkedList() {
+        while(head) {
+            ListNode* temp = head;
+            head = head->next;
             delete temp;
         }
     }
@@ -159,38 +132,35 @@ public:
 int main()
 {
 
-    SinglyLinkedList list;
-    list.insert(0, 0);
-    list.insert(1, 1);
-    list.insert(2, 2);
-    list.insert(3, 3);
+    MyLinkedList list;
+    list.addAtIndex(0, 0);
+    list.addAtIndex(1, 1);
+    list.addAtIndex(2, 2);
+    list.addAtIndex(3, 3);
     list.print();
 
+
     // Insert at head
-    list.insert(0, -1);
+    list.addAtIndex(0, -1);
     list.print();
 
     // Insert at middle
-    list.insert(2, -2);
+    list.addAtIndex(2, -2);
     list.print();
 
     // Insert at end
-    list.insert(list.getSize(), -3);
+    list.addAtIndex(list.getSize(), -3);
     list.print();
 
     // Remove at head
-    list.remove(0);
+    list.deleteAtIndex(0);
     list.print();
 
     // Remove at middle
-    list.remove(2);
+    list.deleteAtIndex(1);
     list.print();
 
     // Remove at end
-    list.remove(list.getSize() - 1);
-    list.print();
-
-    // Reverse list
-    list.reverseList();
+    list.deleteAtIndex(list.getSize() - 1);
     list.print();
 }
