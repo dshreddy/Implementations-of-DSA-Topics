@@ -45,7 +45,7 @@
 | Traversal             | Implementation                        | Practice Problem(s)                  |
 | --------------------- | ------------------------------------- |------------------------------------- |
 | Level Order Traversal | [Code](./Algorithms/03_trees/bfs.cpp) |[102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/description/)
-| DFS                   | [Code](./Algorithms/03_trees/dfs.cpp) | [105. Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/)<br/>[173. Binary Search Tree Iterator](https://leetcode.com/problems/binary-search-tree-iterator/description/)<br/>[145. Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/description/) [Note: Implement iterative version]
+| DFS                   | [Code](./Algorithms/03_trees/dfs.cpp) | [105. Construct Binary Tree from Preorder and Inorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/)<br/>[173. Binary Search Tree Iterator](https://leetcode.com/problems/binary-search-tree-iterator/description/)<br/>[145. Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/description/)<br/>**[Note: Implement iterative version]**
 
 ### Backtracking
 
