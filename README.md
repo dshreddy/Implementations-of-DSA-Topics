@@ -1,4 +1,106 @@
-## Data Structures
+# Intro 
+
+Competitive programming combines two topics: 
+- The design of algorithms and
+- The implementation of algorithms.
+
+The design of algorithms consists of problem solving and mathematical thinking. Skills for analyzing problems and solving them creatively are needed. An algorithm for solving a problem has to be both correct and efficient, and the core of the problem is often about inventing an efficient algorithm. Theoretical knowledge of algorithms is important to competitive programmers. Typically, a solution to a problem is a combination of well-known techniques and new insights. The techniques that appear in competitive programming also form the basis for the scientific research of algorithms.
+
+The implementation of algorithms requires good programming skills. In competitive programming, the solutions are graded by testing an implemented algorithm using a set of test cases. Thus, it is not enough that the idea of the algorithm is correct, but the implementation also has to be correct. A good coding style in contests is straightforward and concise. Programs should be written quickly, because there is not much time available. Unlike in traditional software engineering, the programs are short (usually at most a few hundred lines of code), and they do not need to be maintained after the contest
+
+# Time complexity
+
+The efficiency of algorithms is important in competitive programming. Usually, it is easy to design an algorithm that solves the problem slowly, but the real challenge is to invent a fast algorithm. If the algorithm is too slow, it will get only partial points or no points at all.
+
+The **time complexity** of an algorithm estimates how much time the algorithm will use for some input. The idea is to represent the efficiency as a function whose parameter is the size of the input. By calculating the time complexity, we can find out whether the algorithm is fast enough without implementing it.
+
+## Calculation rules
+
+### Order of magnitude
+
+A time complexity does not tell us the exact number of times the code inside a loop is executed, but it only shows the order of magnitude. In the following examples, the code inside the loop is executed 3n, n + 5 and ⌈n/2⌉ times, but the time complexity of each code is O(n).
+
+```cpp
+for (int i = 1; i <= 3*n; i++) {
+    // code
+}
+
+for (int i = 1; i <= n+5; i++) {
+    // code
+}
+
+for (int i = 1; i <= n; i += 2) {
+    // code
+}
+```
+
+### Phases
+
+If the algorithm consists of consecutive phases, the total time complexity is the largest time complexity of a single phase. The reason for this is that the slowest phase is usually the bottleneck of the code. For example, the following code consists of three phases with time complexities O(n), O(n^2) and O(n). Thus, the total time complexity is O(n^2).
+
+```cpp
+
+for (int i = 1; i <= n; i++) {
+    // code
+}
+
+for (int i = 1; i <= n; i++) {
+    for (int j = 1; j <= n; j++) {
+        // code
+    }
+}
+
+for (int i = 1; i <= n; i++) {
+    // code
+}
+```
+
+### Several variables
+
+Sometimes the time complexity depends on several factors. In this case, the time complexity formula contains several variables.
+
+For example, the time complexity of the following code is O(n*m):
+```cpp
+for (int i = 1; i <= n; i++) {
+    for (int j = 1; j <= m; j++) {
+        // code
+    }
+}
+```
+
+### Recursion
+
+The time complexity of a recursive function depends on the number of times the function is called and the time complexity of a single call. The total time complexity is the product of these values.
+
+For example, consider the following function:
+
+```cpp
+void g(int n) {
+    if (n == 1) return;
+    g(n-1);
+    g(n-1);
+}
+```
+
+In this case each function call generates two other calls, except for n = 1.
+
+Based on this, the time complexity is
+
+1 + 2+ 4+ · · · + 2^n−1 = 2^n− 1= O(2^n).
+
+Most algorithms in this book are polynomial. Still, there are many important problems for which no polynomial algorithm is known, i.e., nobody knows how to solve them efficiently. **NP-hard** problems are an important set of problems, for which no polynomial algorithm is known.
+
+## Estimating efficiency
+
+By calculating the time complexity of an algorithm, it is possible to check, before implementing the algorithm, that it is efficient enough for the problem. The starting point for estimations is the fact that a modern computer can perform 10^8 operations per second. **This information makes it easier to design the algorithm, because it rules out approaches that would yield an algorithm with a worse time complexity.**
+
+![](./assets/TC.png)
+
+# Data Structures
+
+A data structure is a way to store data in the memory of a computer. It is important to choose an appropriate data structure for a problem, because each data structure has its own advantages and disadvantages. The crucial question is: which operations are efficient in the chosen data structure?
+
+This repo introduces the most important data structures in the C++ standard library. It is a good idea to use the standard library whenever possible, because it will save a lot of time. 
 
 | Data Structure | Implementation | Operations (Time Complexity) | Practice Problem(s) |
 | -------------- | ---------------| ---------------------------- |---------------------|
